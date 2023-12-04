@@ -40,6 +40,5 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	float &DamageRef = Damage;
 	DamageRef = 50;
 	UE_LOG(LogTemp, Display, TEXT("DamageRef: %f"), DamageRef);
-	UE_LOG(LogTemp, Display, TEXT("Damage: %f"), Damage);
 }
 
