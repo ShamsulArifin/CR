@@ -36,9 +36,23 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	FVector End = Start + GetForwardVector() * MaxGrabDistance;
 	DrawDebugLine(GetWorld(), Start, End, FColor::Red);
 
-	float Damage = 0;
-	float &DamageRef = Damage;
-	DamageRef = 50;
-	UE_LOG(LogTemp, Display, TEXT("DamageRef: %f"), DamageRef);
+	float Damage;
+	if(HasDamage(Damage))
+	{
+		PrintDamage(Damage);
+	}
 }
+
+void UGrabber::PrintDamage(const float& Damage)
+{
+	//Damage = 2;
+	UE_LOG(LogTemp, Display, TEXT("Damage: %f"), Damage);
+}
+
+bool UGrabber::HasDamage(float& OutDamage)
+{
+	OutDamage = 5;
+	return true;
+}
+
 
